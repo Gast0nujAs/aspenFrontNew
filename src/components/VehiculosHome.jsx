@@ -14,7 +14,7 @@ const VehiculosHome = () => {
 
   useEffect(() => {
     api
-      .get("/api/cars")
+      .get("/api/usados", { params: {limit: 12, orden: "recientes"} })
       .then((response) => {
         const vehiculosData = response.data.data || response.data || []
         const vehiculosOrdenados = Array.isArray(vehiculosData)
